@@ -8,6 +8,12 @@
       "executor": "@nx/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "codegen"
+        }
+      ],
       "options": {
         "outputPath": "dist/packages/client-default"
       },
@@ -66,7 +72,16 @@
       "options": {
         "lintFilePatterns": ["packages/client-default/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "codegen": {
+      "inputs": [
+        {
+          "externalDependencies": ["@graphql-codegen/cli"]
+        }
+      ],
+      "command": "npx graphql-code-generator --config packages/client-default/codegen.ts"
     }
   },
-  "tags": ["app"]
+  "tags": ["type:app"],
+  "implicitDependencies": ["apollo-server"]
 }
