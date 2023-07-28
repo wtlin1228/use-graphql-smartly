@@ -2,15 +2,6 @@ import '@apollo/space-kit/reset.css';
 import { colors as SKColors } from '@use-graphql-smartly/space-kit';
 import { Global } from '@emotion/react';
 
-const breakpoints = [480, 768, 992, 1200];
-export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
-
-export const unit = 8;
-export const widths = {
-  largePageWidth: 1600,
-  regularPageWidth: 1100,
-  textPageWidth: 800,
-};
 export const colors = {
   primary: SKColors.indigo.base,
   secondary: SKColors.teal.base,

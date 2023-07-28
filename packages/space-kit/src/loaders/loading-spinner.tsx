@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Property } from 'csstype';
 import { keyframes } from '@emotion/react';
-import { colors } from '../colors';
+import { colors } from '../styles';
 import { useSpaceKitProvider } from '../providers';
 
 export type Size = 'large' | 'medium' | 'small' | 'xsmall' | '2xsmall';
