@@ -41,8 +41,6 @@ const Track = () => {
     variables: { trackId },
   });
 
-  console.log(data);
-
   return (
     <Layout logo={logo}>
       <QueryResult error={error} loading={loading} data={data}>
