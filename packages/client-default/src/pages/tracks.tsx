@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 
 import { gql } from '../gql';
+import { IconApollo } from '@use-graphql-smartly/space-kit';
 
 // import { Layout } from "../components";
 // import QueryResult from "../components/query-result";
@@ -43,7 +44,11 @@ const Tracks = () => {
   //   </Layout>
   // );
 
-  return <div>Tracks</div>;
+  return (
+    <div>
+      <IconApollo width="100px" height="40px" />
+    </div>
+  );
 };
 
 export default Tracks;
