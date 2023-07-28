@@ -1,7 +1,14 @@
 import { useQuery } from '@apollo/client';
 
+import {
+  IconApollo,
+  Layout,
+  QueryResult,
+} from '@use-graphql-smartly/space-kit';
+
+import logo from '../assets/space_cat_logo.png';
 import { gql } from '../gql';
-import { IconApollo } from '@use-graphql-smartly/space-kit';
+import TrackCard from '../containers/track-card';
 
 // import { Layout } from "../components";
 // import QueryResult from "../components/query-result";
@@ -34,15 +41,15 @@ const Tracks = () => {
 
   console.log(data);
 
-  // return (
-  //   <Layout grid>
-  //     <QueryResult error={error} loading={loading} data={data}>
-  //       {data?.tracksForHome?.map((track) => (
-  //         <TrackCard key={track.id} track={track} />
-  //       ))}
-  //     </QueryResult>
-  //   </Layout>
-  // );
+  return (
+    <Layout grid logo={logo}>
+      <QueryResult error={error} loading={loading} data={data}>
+        {data?.tracksForHome?.map((track) => (
+          <TrackCard key={track.id} track={track} />
+        ))}
+      </QueryResult>
+    </Layout>
+  );
 
   return (
     <div>

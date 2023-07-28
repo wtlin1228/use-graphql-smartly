@@ -1,6 +1,8 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+import { GlobalStylesReset } from '@use-graphql-smartly/space-kit';
+import GlobalStyles from './styles';
 
 import Pages from './pages';
 
@@ -14,6 +16,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
+    <GlobalStylesReset />
+    <GlobalStyles />
     <ApolloProvider client={client}>
       <Pages />
     </ApolloProvider>

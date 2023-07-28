@@ -1,4 +1,3 @@
-import '@apollo/space-kit/reset.css';
 import { colors as SKColors } from '@use-graphql-smartly/space-kit';
 import { Global } from '@emotion/react';
 

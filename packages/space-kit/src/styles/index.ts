@@ -7,3 +7,4 @@ export const widths = {
   textPageWidth: 800,
 };
 export { colors } from '../colors';
+export { GlobalStylesReset } from './reset';
