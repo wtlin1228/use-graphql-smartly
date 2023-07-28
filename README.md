@@ -11,18 +11,20 @@ If you want to start a new client project to try new things,
 
 ```
 npx nx generate @nx/react:application \
-  --name=<YOUR_APPLICATION_NAME>
-  --bundler=vite
-  --compiler=swc
-  --e2eTestRunner=none
-  --routing=true
-  --style=@emotion/styled
-  --tags=type:app
+  --name=<YOUR_APPLICATION_NAME> \
+  --bundler=vite \
+  --compiler=swc \
+  --e2eTestRunner=none \
+  --routing=true \
+  --style=@emotion/styled \
+  --tags=type:app \
   --unitTestRunner=vitest
 ```
 
 2. Copy `packages/client-default/src` into `packages/<YOUR_APPLICATION_NAME>/src`.
-3. You are ready to go.
+3. Setup graphql-code-gen in `packages/<YOUR_APPLICATION_NAME>/codegen.ts`.
+4. Add a target in your project `packages/<YOUR_APPLICATION_NAME>/project.json`.
+5. You are ready to go.
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
