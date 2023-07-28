@@ -1,18 +1,10 @@
 import { useQuery } from '@apollo/client';
 
-import {
-  IconApollo,
-  Layout,
-  QueryResult,
-} from '@use-graphql-smartly/space-kit';
+import { Layout, QueryResult } from '@use-graphql-smartly/space-kit';
 
-import logo from '../assets/space_cat_logo.png';
 import { gql } from '../gql';
+import logo from '../assets/space_cat_logo.png';
 import TrackCard from '../containers/track-card';
-
-// import { Layout } from "../components";
-// import QueryResult from "../components/query-result";
-// import TrackCard from "../containers/track-card";
 
 /** TRACKS gql query to retrieve all tracks */
 export const TRACKS = gql(`
@@ -39,8 +31,6 @@ export const TRACKS = gql(`
 const Tracks = () => {
   const { loading, error, data } = useQuery(TRACKS);
 
-  console.log(data);
-
   return (
     <Layout grid logo={logo}>
       <QueryResult error={error} loading={loading} data={data}>
@@ -49,12 +39,6 @@ const Tracks = () => {
         ))}
       </QueryResult>
     </Layout>
-  );
-
-  return (
-    <div>
-      <IconApollo width="100px" height="40px" />
-    </div>
   );
 };
 

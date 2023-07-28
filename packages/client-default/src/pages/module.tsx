@@ -1,9 +1,10 @@
 import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
+import { Layout, QueryResult } from '@use-graphql-smartly/space-kit';
 
 import { gql } from '../gql';
-
-// import { Layout, ModuleDetail, QueryResult } from "../components";
+import logo from '../assets/space_cat_logo.png';
+import ModuleDetail from '../components/module-detail';
 
 /**
  * GET_MODULE_AND_PARENT_TRACK gql query to retrieve a specific module and its parent track,
@@ -41,15 +42,13 @@ const Module = () => {
 
   console.log(data);
 
-  // return (
-  //   <Layout fullWidth>
-  //     <QueryResult error={error} loading={loading} data={data}>
-  //       <ModuleDetail track={data?.track} module={data?.module} />
-  //     </QueryResult>
-  //   </Layout>
-  // );
-
-  return <div>Module</div>;
+  return (
+    <Layout fullWidth logo={logo}>
+      <QueryResult error={error} loading={loading} data={data}>
+        <ModuleDetail track={data?.track} module={data?.module} />
+      </QueryResult>
+    </Layout>
+  );
 };
 
 export default Module;

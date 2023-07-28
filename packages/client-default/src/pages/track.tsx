@@ -2,9 +2,9 @@ import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 
 import { gql } from '../gql';
-
-// import { Layout, QueryResult } from "../components";
-// import TrackDetail from "../components/track-detail";
+import logo from '../assets/space_cat_logo.png';
+import { Layout, QueryResult } from '@use-graphql-smartly/space-kit';
+import TrackDetail from '../components/track-detail';
 
 /** GET_TRACK gql query to retrieve a specific track by its ID */
 const GET_TRACK = gql(`
@@ -43,15 +43,13 @@ const Track = () => {
 
   console.log(data);
 
-  // return (
-  //   <Layout>
-  //     <QueryResult error={error} loading={loading} data={data}>
-  //       <TrackDetail track={data?.track} />
-  //     </QueryResult>
-  //   </Layout>
-  // );
-
-  return <div>Track</div>;
+  return (
+    <Layout logo={logo}>
+      <QueryResult error={error} loading={loading} data={data}>
+        <TrackDetail track={data?.track} />
+      </QueryResult>
+    </Layout>
+  );
 };
 
 export default Track;
