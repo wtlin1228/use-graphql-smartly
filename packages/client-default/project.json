@@ -60,7 +60,7 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/packages/client-default"],
+      "outputs": ["{workspaceRoot}/coverage/packages/client-default"],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/packages/client-default"
