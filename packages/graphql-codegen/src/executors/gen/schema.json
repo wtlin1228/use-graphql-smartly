@@ -1,14 +1,14 @@
 {
   "$schema": "http://json-schema.org/schema",
   "version": 2,
-  "title": "Gen executor",
+  "title": "graphql-codegen executor",
   "description": "",
   "type": "object",
   "properties": {
     "configFile": {
       "type": "string",
       "title": "Config file",
-      "description": "Config file to use, ex: packages/client-default/codegen.ts"
+      "description": "Config file to use"
     }
   },
   "required": []
