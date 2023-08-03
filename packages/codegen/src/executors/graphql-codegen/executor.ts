@@ -1,11 +1,11 @@
-import { GenExecutorSchema } from './schema';
+import { GraphqlCodegenExecutorSchema } from './schema';
 
 import type { ExecutorContext } from '@nx/devkit';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
 export default async function genExecutor(
-  options: GenExecutorSchema,
+  options: GraphqlCodegenExecutorSchema,
   context: ExecutorContext
 ): Promise<{ success: boolean }> {
   const configFile = options.configFile || 'codegen.ts';

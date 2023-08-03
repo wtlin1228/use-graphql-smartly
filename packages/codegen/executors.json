@@ -1,8 +1,8 @@
 {
   "executors": {
-    "gen": {
-      "implementation": "./src/executors/gen/executor",
-      "schema": "./src/executors/gen/schema.json",
+    "graphql-codegen": {
+      "implementation": "./src/executors/graphql-codegen/executor",
+      "schema": "./src/executors/graphql-codegen/schema.json",
       "description": "generate code from GraphQL schema"
     }
   }

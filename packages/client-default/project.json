@@ -74,7 +74,7 @@
       }
     },
     "codegen": {
-      "executor": "@use-graphql-smartly/codegen:gen",
+      "executor": "@use-graphql-smartly/codegen:graphql-codegen",
       "options": {}
     }
   },
