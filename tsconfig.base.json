@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@use-graphql-smartly/graphql-codegen": [
-        "packages/graphql-codegen/src/index.ts"
-      ],
+      "@use-graphql-smartly/codegen": ["packages/codegen/src/index.ts"],
       "@use-graphql-smartly/space-kit": ["packages/space-kit/src/index.ts"]
     }
   },

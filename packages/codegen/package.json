@@ -1,5 +1,5 @@
 {
-  "name": "@use-graphql-smartly/graphql-codegen",
+  "name": "@use-graphql-smartly/codegen",
   "version": "0.0.1",
   "dependencies": {
     "@nx/devkit": "16.6.0",
