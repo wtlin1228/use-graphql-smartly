@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "gen": {
+      "implementation": "./src/executors/gen/executor",
+      "schema": "./src/executors/gen/schema.json",
+      "description": "generate code from GraphQL schema"
+    }
+  }
+}

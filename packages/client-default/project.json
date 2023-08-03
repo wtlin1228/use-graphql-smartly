@@ -74,12 +74,8 @@
       }
     },
     "codegen": {
-      "inputs": [
-        {
-          "externalDependencies": ["@graphql-codegen/cli"]
-        }
-      ],
-      "command": "npx graphql-code-generator --config packages/client-default/codegen.ts"
+      "executor": "@use-graphql-smartly/graphql-codegen:gen",
+      "options": {}
     }
   },
   "tags": ["type:app"],
