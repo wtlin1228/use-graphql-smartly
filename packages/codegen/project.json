@@ -43,7 +43,8 @@
         "lintFilePatterns": [
           "packages/codegen/**/*.ts",
           "packages/codegen/package.json",
-          "packages/codegen/executors.json"
+          "packages/codegen/executors.json",
+          "packages/codegen/generators.json"
         ]
       }
     },

@@ -1,0 +1,1 @@
+Watch mode for GraphQL code generation: `npx nx codegen <%= name %> --watch`

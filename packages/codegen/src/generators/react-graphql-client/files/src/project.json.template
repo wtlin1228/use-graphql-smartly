@@ -1,0 +1,83 @@
+{
+  "name": "<%= name %>",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/<%= name %>/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "dependsOn": [
+        {
+          "projects": "self",
+          "target": "codegen"
+        }
+      ],
+      "options": {
+        "outputPath": "dist/packages/<%= name %>"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "<%= name %>:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "<%= name %>:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "<%= name %>:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "<%= name %>:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "<%= name %>:build:development"
+        },
+        "production": {
+          "buildTarget": "<%= name %>:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{workspaceRoot}/coverage/packages/<%= name %>"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/packages/<%= name %>"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/<%= name %>/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "codegen": {
+      "executor": "@use-graphql-smartly/codegen:graphql-codegen",
+      "options": {}
+    }
+  },
+  "tags": ["type:app"],
+  "implicitDependencies": ["apollo-server"]
+}
