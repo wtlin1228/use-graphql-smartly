@@ -4,6 +4,11 @@
       "factory": "./src/generators/react-graphql-client/generator",
       "schema": "./src/generators/react-graphql-client/schema.json",
       "description": "react-graphql-client generator"
+    },
+    "graphql-codegen-setup": {
+      "factory": "./src/generators/graphql-codegen-setup/generator",
+      "schema": "./src/generators/graphql-codegen-setup/schema.json",
+      "description": "graphql-codegen-setup generator"
     }
   }
 }

@@ -14,7 +14,7 @@ export async function reactGraphqlClientGenerator(
   const projectRoot = `packages/${options.name}`;
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,
-    projectType: 'library',
+    projectType: 'application',
     sourceRoot: `${projectRoot}/src`,
     targets: {},
   });
